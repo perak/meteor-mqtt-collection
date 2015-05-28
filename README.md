@@ -63,8 +63,13 @@ Subscribe to specified topic(s). Works only **after** MQTT connection is establi
 
 **Arguments:**
 
-- `topics` is array of strings or single string - topic name(s) to subscribe on connect
+- `topics` is array of strings or single string - topic name(s) to subscribe
 
+
+Live example
+============
+
+You can find example application using this package <a href="http://generator-iot.meteor.com" target="_blank">here</a>.
 
 
 That's all folks :)
