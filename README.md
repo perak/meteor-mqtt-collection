@@ -12,7 +12,7 @@ Example
 ### Connect to MQTT broker and subscribe to topic (server side only)
 
 ```
-MyCollection.mqttConnect("mqtt://test.mosquitto.org", ["presence"], {});
+MyCollection.mqttConnect("mqtt://test.mosquitto.org", ["presence"], {}, {});
 ```
 
 We are now connected and subscribed to "presence" topic. Anything published to "presence" MQTT topic will be written into MyCollection.
@@ -30,7 +30,7 @@ You need to insert three **mandatory** fields: `topic`, `message` and `broadcast
 Functions
 =========
 
-Collection.mqttConnect(uri, topics, options)
+Collection.mqttConnect(uri, topics, options, mqttOptions)
 --------------------------------------------
 
 Establishes connection to MQTT broker and subscribes to listed topic(s).
@@ -48,7 +48,7 @@ Establishes connection to MQTT broker and subscribes to listed topic(s).
 ```
 - `insert` - if set to true, each message will be inserted into collection (and your collection will grow!). If this option is not set (or set to false) messages will be upsert-ed (you'l have single document for each topic). Default: false
 - `raw` - if set to true, received string will be written as-is. If this option is not set (or set to false) received string will be converted to object with `JSON.parse()`. Default: false
-
+- `mqttOptions` is an object that is supplied to `mqtt.connect([url],options)` in the MQTT.js library for configuring the underlying options of the MQTT.js-client. See the <a href="https://github.com/mqttjs/MQTT.js#client">docs</a>.
 
 Collection.mqttDisconnect()
 ---------------------------
