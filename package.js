@@ -1,13 +1,13 @@
 Package.describe({
   name: "perak:mqtt-collection",
-  version: "1.0.4",
+  version: "1.0.5",
   summary: "IoT for Meteor - send/receive MQTT messages via collections",
   git: "https://github.com/perak/meteor-mqtt-collection.git",
   documentation: "README.md"
 });
 
 Npm.depends({
-  "mqtt": "1.2.0"
+  "mqtt": "1.13.0"
 });
 
 Package.onUse(function(api) {
